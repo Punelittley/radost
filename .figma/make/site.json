@@ -1,0 +1,10 @@
+{
+  "description": "A beauty services website featuring service details, success stories, promotions, gift certificates, and contact information in a soft beige, pastel style.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
