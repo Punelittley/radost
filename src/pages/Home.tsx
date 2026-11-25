@@ -120,12 +120,8 @@ const gallery = [
   },
 ];
 
-function Arrow({ light = false }: { light?: boolean }) {
-  return (
-    <span className={`arrow ${light ? "arrow-light" : ""}`} aria-hidden="true">
-      ↗
-    </span>
-  );
+function Arrow() {
+  return null;
 }
 
 export default function Home() {
@@ -172,10 +168,6 @@ export default function Home() {
       </section>
 
       <section className="intro section" id="about">
-        <div className="section-label">
-          <span>01</span>
-          <span>О пространстве</span>
-        </div>
         <div className="intro-copy">
           <p className="eyebrow">Место, где можно выдохнуть</p>
           <h2>
@@ -192,7 +184,6 @@ export default function Home() {
         <div className="benefit-grid">
           {benefits.map(([number, title, text]) => (
             <article className="benefit-card" key={number}>
-              <span>{number}</span>
               <div>
                 <h3>{title}</h3>
                 <p>{text}</p>
@@ -204,10 +195,6 @@ export default function Home() {
 
       <section className="services section" id="services">
         <div className="section-heading">
-          <div className="section-label">
-            <span>02</span>
-            <span>Наши услуги</span>
-          </div>
           <div>
             <p className="eyebrow">Ваше время для себя</p>
             <h2>
@@ -220,11 +207,10 @@ export default function Home() {
           </p>
         </div>
         <div className="service-grid">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <article className="service-card" key={service.title}>
               <div className="service-photo">
                 <img src={service.image} alt={service.title} />
-                <span>0{index + 1}</span>
               </div>
               <div className="service-body">
                 <h3>{service.title}</h3>
@@ -242,7 +228,7 @@ export default function Home() {
                       to={`/services/${service.slug}`}
                       className="ml-auto inline-flex items-center gap-1 text-xs text-[#24211d] underline underline-offset-4"
                     >
-                      Подробнее ↗
+                      Подробнее
                     </Link>
                   )}
                 </div>
@@ -256,17 +242,13 @@ export default function Home() {
             className="button button-dark"
             style={{ display: "inline-flex", alignItems: "center", gap: "12px", textDecoration: "none" }}
           >
-            Весь прайс-лист студии (16 услуг) <Arrow light />
+            Весь прайс-лист студии (16 услуг)
           </Link>
         </div>
       </section>
 
       <section className="results section" id="results">
         <div className="results-head">
-          <div className="section-label section-label-light">
-            <span>03</span>
-            <span>Атмосфера и результаты</span>
-          </div>
           <h2>
             То, что остаётся <em>после</em>
           </h2>
@@ -281,7 +263,7 @@ export default function Home() {
                   <span>▶</span>
                 </button>
               )}
-              <figcaption>0{index + 1} / Радость</figcaption>
+              <figcaption>Радость</figcaption>
             </figure>
           ))}
         </div>
@@ -294,10 +276,6 @@ export default function Home() {
 
       <section className="offers section" id="offers">
         <div className="section-heading offers-heading">
-          <div className="section-label">
-            <span>04</span>
-            <span>С особой заботой</span>
-          </div>
           <div>
             <p className="eyebrow">Приятные поводы</p>
             <h2>
@@ -314,7 +292,7 @@ export default function Home() {
               <p>Познакомьтесь со студией и своим мастером в комфортном ритме.</p>
             </div>
             <a href="#contacts">
-              Записаться <Arrow light />
+              Записаться
             </a>
           </article>
           <article className="offer-card">
@@ -325,7 +303,7 @@ export default function Home() {
               <p>При покупке курса из пяти массажей одной выбранной программы.</p>
             </div>
             <a href="#contacts">
-              Узнать подробнее <Arrow />
+              Узнать подробнее
             </a>
           </article>
           <article className="offer-card offer-soft">
@@ -336,7 +314,7 @@ export default function Home() {
               <p>Приходите вместе с близким человеком и замедлитесь вдвоём.</p>
             </div>
             <a href="#contacts">
-              Выбрать время <Arrow />
+              Выбрать время
             </a>
           </article>
         </div>
@@ -346,17 +324,13 @@ export default function Home() {
 
       <section className="contact section" id="contacts">
         <div className="contact-intro">
-          <div className="section-label section-label-light">
-            <span>06</span>
-            <span>Контакты</span>
-          </div>
           <p className="eyebrow light">Будем рады встрече</p>
           <h2>
             Запишитесь на свою <em>паузу</em>
           </h2>
           <p>Напишите нам — администратор поможет выбрать услугу, мастера и удобное время.</p>
           <a className="button button-light" href="https://t.me/" target="_blank" rel="noreferrer">
-            Написать в Telegram <Arrow />
+            Написать в Telegram
           </a>
         </div>
         <div className="contact-details">

@@ -78,10 +78,9 @@ export default function OffersPage() {
                 <div className="mt-8 border-t border-[#ded3c1] pt-6">
                   <Link
                     to="/contacts"
-                    className="inline-flex min-h-12 w-full items-center justify-between rounded-full bg-[#29251f] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#3d372f]"
+                    className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#29251f] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#3d372f]"
                   >
                     <span>Записаться по акции</span>
-                    <span aria-hidden="true">↗</span>
                   </Link>
                 </div>
               </article>
@@ -111,9 +110,9 @@ export default function OffersPage() {
           <div className="mt-10">
             <Link
               to="/contacts"
-              className="inline-flex min-h-12 items-center gap-4 rounded-full bg-[#eee4d2] px-9 py-3.5 text-base font-semibold text-[#29251f] transition-transform hover:scale-105"
+              className="inline-flex min-h-12 items-center rounded-full bg-[#eee4d2] px-9 py-3.5 text-base font-semibold text-[#29251f] transition-transform hover:scale-105"
             >
-              Заказать сертификат <span aria-hidden="true">↗</span>
+              Заказать сертификат
             </Link>
           </div>
         </div>

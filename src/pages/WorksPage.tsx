@@ -49,9 +49,9 @@ export default function WorksPage() {
               <div className={`overflow-hidden bg-[#d0c2ac] ${index % 2 === 0 ? "rounded-t-[160px]" : "rounded-[8px]"}`}>
                 <EditorialImage src={image} alt={title} className={`w-full object-cover motion-safe:transition-transform motion-safe:duration-500 group-hover:scale-[1.03] ${index % 2 === 0 ? "h-[480px]" : "h-[360px]"}`} />
               </div>
-              <span className="mt-5 flex items-center justify-between gap-4 px-2 pb-3"><span className="font-serif text-3xl">{title}</span><span className="grid size-11 shrink-0 place-items-center rounded-full border border-[#b7aa94]" aria-hidden="true">↗</span></span>
+              <span className="mt-5 block px-2 pb-3 font-serif text-3xl">{title}</span>
             </button>
-            <figcaption className="mt-4 flex justify-between text-sm text-[#615442]"><span>0{index + 1} / Радость</span><span>Момент для себя</span></figcaption>
+            <figcaption className="mt-4 flex justify-between text-sm text-[#615442]"><span>Радость</span><span>Момент для себя</span></figcaption>
           </figure>
         ))}
         </div>

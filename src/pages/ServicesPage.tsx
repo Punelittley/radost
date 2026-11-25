@@ -71,9 +71,6 @@ export default function ServicesPage() {
                 <span className="absolute top-4 left-4 rounded-full bg-[#fbf8f2]/90 px-3 py-1 text-xs font-medium text-[#594a35] backdrop-blur-sm">
                   {service.categoryName}
                 </span>
-                <span className="absolute top-4 right-4 grid size-8 place-items-center rounded-full bg-[#29251f] text-xs text-white">
-                  {index + 1 < 10 ? `0${index + 1}` : index + 1}
-                </span>
               </div>
 
               <div className="p-6">
@@ -97,13 +94,10 @@ export default function ServicesPage() {
             <div className="border-t border-[#dfd5c5] p-6 pt-4">
               <Link
                 to={`/services/${service.slug}`}
-                className="flex min-h-12 w-full items-center justify-between rounded-full border border-[#8f7a5d] px-5 py-2.5 text-sm font-medium text-[#29251f] transition-colors hover:bg-[#29251f] hover:text-white"
+                className="flex min-h-12 w-full items-center justify-center rounded-full border border-[#8f7a5d] px-5 py-2.5 text-sm font-medium text-[#29251f] transition-colors hover:bg-[#29251f] hover:text-white"
                 aria-label={`Подробнее об услуге ${service.title}`}
               >
                 <span>Подробнее</span>
-                <span className="grid size-7 place-items-center rounded-full border border-current text-xs" aria-hidden="true">
-                  ↗
-                </span>
               </Link>
             </div>
           </article>
@@ -147,7 +141,7 @@ export default function ServicesPage() {
               to="/contacts"
               className="inline-flex min-h-12 items-center gap-4 rounded-full bg-[#eee4d2] px-8 py-3 text-sm font-semibold text-[#29251f] transition-transform hover:scale-105"
             >
-              Записаться на занятие <span aria-hidden="true">↗</span>
+              Записаться на занятие
             </Link>
           </div>
         </div>

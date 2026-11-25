@@ -59,8 +59,7 @@ export default function CareSections() {
   return (
     <>
       <section id="prices" className="w-full bg-[#e5decd] px-5 py-20 text-[#29271f] sm:px-10 lg:px-[6vw] lg:py-28" aria-labelledby="prices-heading">
-        <div className="mb-10 flex items-center gap-4 text-sm">
-          <span className="grid size-8 place-items-center rounded-full border border-[#847b63]">05</span>
+        <div className="mb-10 flex items-center gap-4 text-sm font-medium text-[#6a593e]">
           <span>Меню заботы о себе</span>
         </div>
         <div className="grid items-stretch gap-8 lg:grid-cols-2 lg:gap-16">
@@ -96,7 +95,7 @@ export default function CareSections() {
               ))}
             </div>
             <p className="mt-3 text-sm leading-relaxed text-[#5f594b]">Стоимость указана для знакомства с программами. Детали и подходящий формат уточним перед визитом.</p>
-            <Link to="/contacts" className={`mt-7 inline-flex min-h-12 w-fit items-center gap-7 rounded-full bg-[#333226] px-7 py-3 text-sm text-[#fffaf0] ${focusStyle}`}>Подобрать время <span aria-hidden="true">↗</span></Link>
+            <Link to="/contacts" className={`mt-7 inline-flex min-h-12 w-fit items-center rounded-full bg-[#333226] px-7 py-3 text-sm text-[#fffaf0] ${focusStyle}`}>Подобрать время</Link>
           </div>
         </div>
       </section>
@@ -108,9 +107,8 @@ export default function CareSections() {
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {visitSteps.map(([number, title, text]) => (
-            <article key={number} className="rounded-t-[75px] rounded-b-2xl border border-[#d5ccbc] bg-[#ece5d9] px-7 py-9">
-              <span className="font-serif text-4xl italic text-[#79613d]">{number}</span>
-              <h3 className="mt-12 font-serif text-4xl">{title}</h3>
+            <article key={number} className="rounded-2xl border border-[#d5ccbc] bg-[#ece5d9] px-7 py-9">
+              <h3 className="font-serif text-3xl">{title}</h3>
               <p className="mt-4 text-sm leading-relaxed text-[#5b554b]">{text}</p>
             </article>
           ))}

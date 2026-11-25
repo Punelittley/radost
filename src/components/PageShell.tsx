@@ -14,7 +14,7 @@ export default function PageShell({ children }: { children: ReactNode }) {
         <p>Массаж, который возвращает к себе</p>
         <div>
           <a href="tel:+79001234567">+7 (900) 123-45-67</a>
-          <Link to="/contacts">Контакты ↗</Link>
+          <Link to="/contacts">Контакты</Link>
         </div>
       </footer>
     </main>

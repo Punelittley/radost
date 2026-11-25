@@ -16,7 +16,7 @@ export default function ContactsPage() {
           <span>Запись и вопросы</span>
           <a href="tel:+79001234567">+7 (900) 123-45-67</a>
           <a href="https://t.me/" target="_blank" rel="noreferrer">
-            Написать в Telegram ↗
+            Написать в Telegram
           </a>
         </div>
         <div className="contact-panel">

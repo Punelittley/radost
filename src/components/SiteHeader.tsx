@@ -88,12 +88,9 @@ export default function SiteHeader({ overlay = false }: { overlay?: boolean }) {
         {/* Правая кнопка записи (десктоп) */}
         <Link
           to="/contacts"
-          className="hidden min-h-11 items-center gap-4 text-sm text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:inline-flex"
+          className="hidden min-h-11 items-center rounded-full border border-white/50 px-5 py-2 text-sm text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:inline-flex"
         >
-          <span>Записаться</span>
-          <span className="grid size-10 place-items-center rounded-full border border-white/60 transition-transform group-hover:scale-105" aria-hidden="true">
-            ↗
-          </span>
+          Записаться
         </Link>
 
         {/* Кнопка бургер-меню (мобильные) */}
@@ -113,67 +110,62 @@ export default function SiteHeader({ overlay = false }: { overlay?: boolean }) {
         </button>
       </header>
 
-      {/* Полноэкранное мобильное меню (Fullscreen Drawer) */}
+      {/* Мобильное меню */}
       {open && (
         <div
           id="mobile-navigation"
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex flex-col justify-between overflow-y-auto bg-[#24201a] p-6 text-white sm:p-10 lg:hidden"
+          className="fixed inset-0 z-50 flex flex-col justify-between overflow-y-auto bg-[#24201a] p-5 text-white sm:p-8 lg:hidden"
         >
           {/* Верхняя панель меню */}
-          <div className="flex items-center justify-between border-b border-white/15 pb-5">
+          <div className="flex items-center justify-between border-b border-white/15 pb-4">
             <Link to="/" onClick={() => setOpen(false)} aria-label="Радость">
               <img
                 src={logoImage}
                 alt="Радость"
-                className="h-14 w-18 object-contain brightness-0 invert"
+                className="h-12 w-16 object-contain brightness-0 invert"
               />
             </Link>
             <button
               onClick={() => setOpen(false)}
-              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/50 bg-white/10 px-5 py-2 text-sm text-white focus-visible:outline-2 focus-visible:outline-white"
+              className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/50 bg-white/10 px-4 py-1.5 text-sm text-white focus-visible:outline-2 focus-visible:outline-white"
               aria-label="Закрыть меню"
             >
               <span>Закрыть</span>
-              <span className="text-lg leading-none" aria-hidden="true">✕</span>
+              <span className="text-base leading-none" aria-hidden="true">✕</span>
             </button>
           </div>
 
           {/* Список ссылок */}
-          <nav className="my-auto flex flex-col divide-y divide-white/10 py-6">
-            {links.map(([path, label], index) => (
+          <nav className="my-auto flex flex-col divide-y divide-white/10 py-2">
+            {links.map(([path, label]) => (
               <NavLink
                 key={path}
                 to={path}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `flex min-h-16 items-center justify-between py-3 transition-colors ${
-                    isActive ? "text-[#e9d2af]" : "text-white hover:text-[#e9d2af]"
+                  `flex py-3 text-lg font-medium tracking-wide transition-colors ${
+                    isActive ? "text-[#e9d2af]" : "text-white/90 hover:text-white"
                   }`
                 }
               >
-                <div className="flex items-center gap-4">
-                  <span className="font-mono text-xs text-[#c4b193]">0{index + 1}</span>
-                  <span className="font-serif text-3xl">{label}</span>
-                </div>
-                <span className="text-lg text-[#c4b193]" aria-hidden="true">↗</span>
+                {label}
               </NavLink>
             ))}
           </nav>
 
           {/* Нижняя часть меню */}
-          <div className="border-t border-white/15 pt-6">
+          <div className="border-t border-white/15 pt-4">
             <Link
               to="/contacts"
               onClick={() => setOpen(false)}
-              className="flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-[#eee4d2] px-6 text-base font-semibold text-[#29251f] shadow-lg transition-transform hover:scale-[1.02]"
+              className="flex min-h-12 w-full items-center justify-center rounded-full bg-[#eee4d2] px-6 text-sm font-semibold text-[#29251f] shadow-lg transition-transform hover:scale-[1.02]"
             >
-              <span>Подобрать время / Записаться</span>
-              <span aria-hidden="true">↗</span>
+              Подобрать время / Записаться
             </Link>
 
-            <div className="mt-6 flex flex-col gap-1 text-center text-xs text-white/60">
+            <div className="mt-4 flex flex-col gap-1 text-center text-xs text-white/60">
               <span>г. Вологда, ул. Мира, 14 · Ежедневно 10:00–21:00</span>
               <a href="tel:+79001234567" className="text-white/80 hover:text-white">
                 +7 (900) 123-45-67

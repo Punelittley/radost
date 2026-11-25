@@ -46,17 +46,17 @@ export default function ServiceDetailPage() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
               to="/contacts"
-              className="inline-flex min-h-12 items-center gap-4 rounded-full bg-[#2c2721] px-8 py-3.5 text-base font-medium text-white transition-all hover:bg-[#3d362f] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#735c38]"
+              className="inline-flex min-h-12 items-center rounded-full bg-[#2c2721] px-8 py-3.5 text-base font-medium text-white transition-all hover:bg-[#3d362f] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#735c38]"
             >
-              Записаться на сеанс <span aria-hidden="true">↗</span>
+              Записаться на сеанс
             </Link>
             <a
               href="https://t.me/"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex min-h-12 items-center gap-2 rounded-full border border-[#8a765a] bg-transparent px-6 py-3 text-sm text-[#473d32] transition-colors hover:bg-white/40"
+              className="inline-flex min-h-12 items-center rounded-full border border-[#8a765a] bg-transparent px-6 py-3 text-sm text-[#473d32] transition-colors hover:bg-white/40"
             >
-              Написать в Telegram ↗
+              Написать в Telegram
             </a>
           </div>
         </div>
@@ -123,7 +123,7 @@ export default function ServiceDetailPage() {
                 </div>
                 <div className="mt-5 flex items-center justify-between border-t border-[#dfd4c4] pt-4">
                   <span className="text-sm font-semibold text-[#29251f]">{item.primaryPrice}</span>
-                  <span className="text-sm text-[#7d6b52] group-hover:translate-x-1 transition-transform">Подробнее ↗</span>
+                  <span className="text-sm text-[#7d6b52]">Подробнее</span>
                 </div>
               </Link>
             ))}

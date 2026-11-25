@@ -11,7 +11,7 @@ export default function QuietMoment() {
         <div className="mt-10 flex flex-wrap gap-3 text-sm">
           {["Тёплый свет", "Мягкий текстиль", "Время без спешки"].map((item) => <span key={item} className="rounded-full border border-[#a99a80] px-4 py-3">{item}</span>)}
         </div>
-        <Link to="/services" className="mt-10 inline-flex min-h-12 w-fit items-center gap-8 rounded-full bg-[#302a21] px-7 py-3 text-sm text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#725b39]">Найти свой ритуал <span aria-hidden="true">↗</span></Link>
+        <Link to="/services" className="mt-10 inline-flex min-h-12 w-fit items-center rounded-full bg-[#302a21] px-7 py-3 text-sm text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#725b39]">Найти свой ритуал</Link>
       </div>
       <div className="relative min-h-[420px] lg:min-h-[650px]">
         <img src={heroImage} alt="Тёплый кабинет с натуральными тканями и солнечным светом" className="absolute inset-0 h-full w-full object-cover" />
