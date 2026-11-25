@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 import heroImage from "../assets/spa-hero.png";
 import logoImage from "../assets/radost-logo.png";
 import CareSections from "../components/CareSections";
@@ -11,38 +12,75 @@ type Service = {
   price: string;
   description: string;
   image: string;
+  slug?: string;
 };
 
 const services: Service[] = [
   {
-    title: "Массаж лица",
-    subtitle: "Лифтинг, сияние и глубокое расслабление",
-    duration: "60 минут",
-    price: "от 2 500 ₽",
+    title: "Классический массаж",
+    subtitle: "Снятие напряжения и глубокий отдых",
+    duration: "30 / 60 / 90 минут",
+    price: "от 750 ₽",
     description:
-      "Мягкая проработка лица, шеи и декольте. Снимает отёчность и напряжение, возвращает коже свежесть, а чертам — естественную выразительность.",
+      "Универсальная основа телесной терапии. Снимает мышечные спазмы, улучшает лимфоток и возвращает телу лёгкость.",
     image:
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1000&q=85",
+    slug: "classic-massage",
   },
   {
-    title: "Массаж тела",
-    subtitle: "Восстановление ресурса и лёгкость",
+    title: "Лечебный массаж",
+    subtitle: "Терапия проблемных зон и свобода движений",
     duration: "60 / 90 минут",
     price: "от 3 000 ₽",
     description:
-      "Индивидуальная работа с телом: от бережного расслабления до глубокой проработки мышц. Ритм и интенсивность подбираются под ваше состояние.",
+      "Направленная работа с триггерными точками и зажимами позвоночника. Восстанавливает подвижность и избавляет от боли.",
     image:
       "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=1000&q=85",
+    slug: "healing-massage",
   },
   {
-    title: "SPA-ритуал",
-    subtitle: "Тёплое масло, уход и тишина",
-    duration: "120 минут",
-    price: "от 5 500 ₽",
+    title: "Массаж лица с уходом",
+    subtitle: "Скульптурный лифтинг и сияние кожи",
+    duration: "60 / 90 минут",
+    price: "от 1 500 ₽",
     description:
-      "Комплексный ритуал для полного переключения: прогрев, скрабирование, ароматный массаж и финальный уход. Два часа только для себя.",
+      "Комплексный ритуал: моделирующий массаж лица, шеи и декольте с профессиональной сывороткой и маской по типу кожи.",
     image:
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=85",
+    slug: "face-care-massage",
+  },
+  {
+    title: "Массаж в 4 руки",
+    subtitle: "Синхронная работа двух мастеров",
+    duration: "60 минут",
+    price: "от 5 000 ₽",
+    description:
+      "Премиальный ритуал перезагрузки нервной системы. Мозг перестаёт контролировать движения, наступает полное расслабление.",
+    image:
+      "https://images.unsplash.com/photo-1600612253971-422e7f7faeb6?auto=format&fit=crop&w=1000&q=85",
+    slug: "four-hands-massage",
+  },
+  {
+    title: "Тренажёр Бубновского",
+    subtitle: "Безопасное восстановление спины и суставов",
+    duration: "60 мин / абонемент",
+    price: "от 1 800 ₽",
+    description:
+      "Кинезитерапия на декомпрессионном тренажере под контролем инструктора. Снятие осевой нагрузки и укрепление мышечного корсета.",
+    image:
+      "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1000&q=85",
+    slug: "bubnovsky-training",
+  },
+  {
+    title: "Маникюр с гель-лаком",
+    subtitle: "Идеальная форма и стойкое покрытие",
+    duration: "90–120 минут",
+    price: "1 500 ₽",
+    description:
+      "Аппаратный/комбинированный маникюр с выравниванием ногтевой пластины и покрытием стойким гель-лаком.",
+    image:
+      "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1000&q=85",
+    slug: "manicure-gel",
   },
 ];
 
@@ -195,12 +233,31 @@ export default function Home() {
                   <span>{service.duration}</span>
                   <strong>{service.price}</strong>
                 </div>
-                <button onClick={() => setSelectedService(service)}>
-                  Подробнее <Arrow />
-                </button>
+                <div className="flex gap-2">
+                  <button onClick={() => setSelectedService(service)}>
+                    Быстрый просмотр
+                  </button>
+                  {service.slug && (
+                    <Link
+                      to={`/services/${service.slug}`}
+                      className="ml-auto inline-flex items-center gap-1 text-xs text-[#24211d] underline underline-offset-4"
+                    >
+                      Подробнее ↗
+                    </Link>
+                  )}
+                </div>
               </div>
             </article>
           ))}
+        </div>
+        <div style={{ marginTop: "40px", display: "flex", justifyContent: "center" }}>
+          <Link
+            to="/services"
+            className="button button-dark"
+            style={{ display: "inline-flex", alignItems: "center", gap: "12px", textDecoration: "none" }}
+          >
+            Весь прайс-лист студии (16 услуг) <Arrow light />
+          </Link>
         </div>
       </section>
 
