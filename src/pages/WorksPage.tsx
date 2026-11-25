@@ -1,64 +1,67 @@
+import { Link } from "react-router";
 import PageShell from "../components/PageShell";
-import { useEffect, useRef, useState } from "react";
-import EditorialImage from "../components/EditorialImage";
-
-const works = [
-  [
-    "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1000&q=85",
-    "Глубокая работа с телом",
-  ],
-  [
-    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=85",
-    "Ритуал для лица",
-  ],
-  [
-    "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1000&q=85",
-    "Тепло и забота",
-  ],
-  [
-    "https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=1000&q=85",
-    "Атмосфера студии",
-  ],
-  [
-    "https://images.unsplash.com/photo-1600612253971-422e7f7faeb6?auto=format&fit=crop&w=1000&q=85",
-    "Время для себя",
-  ],
-];
 
 export default function WorksPage() {
-  const [selected, setSelected] = useState<number | null>(null);
-  const dialog = useRef<HTMLDialogElement>(null);
-  useEffect(() => {
-    if (selected !== null) dialog.current?.showModal();
-  }, [selected]);
   return (
     <PageShell>
       <section className="page-title">
-        <p>Наши работы</p>
+        <p>Галерея и атмосфера</p>
         <h1>
-          Моменты <em>тишины</em>
-          <br />и восстановления
+          Пространство <em>тишины</em>
+          <br />и бережной заботы
         </h1>
       </section>
-      <section className="bg-[#e6ddce] px-6 py-20 sm:px-12 lg:px-[7vw]">
-        <div className="mb-14 flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><p className="max-w-md text-base leading-relaxed text-[#584e41]">Не постановка, а настроение. Прикосновения, фактуры и маленькие моменты, из которых складывается отдых.</p><span className="font-serif text-3xl italic text-[#725c3d]">Дневник студии / 01—05</span></div>
-        <div className="grid items-start gap-x-12 gap-y-16 md:grid-cols-2">
-        {works.map(([image, title], index) => (
-          <figure className={`${index % 2 === 1 ? "md:mt-24" : ""} ${index === 4 ? "md:col-span-2 md:mx-auto md:w-3/5" : ""}`} key={title}>
-            <button onClick={() => setSelected(index)} className="group block w-full bg-[#f7f2e9] p-3 text-left shadow-[0_12px_35px_#5f4a3020] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#725c3d] sm:p-5" aria-label={`Увеличить фото: ${title}`}>
-              <div className={`overflow-hidden bg-[#d0c2ac] ${index % 2 === 0 ? "rounded-t-[160px]" : "rounded-[8px]"}`}>
-                <EditorialImage src={image} alt={title} className={`w-full object-cover motion-safe:transition-transform motion-safe:duration-500 group-hover:scale-[1.03] ${index % 2 === 0 ? "h-[480px]" : "h-[360px]"}`} />
+
+      <section className="bg-[#ede5d8] px-6 py-16 sm:px-12 sm:py-24 lg:px-[7vw]">
+        <div className="mx-auto max-w-4xl">
+          {/* Элегантная плашка обновления */}
+          <div className="rounded-[32px] border border-[#d3c5b2] bg-[#fbf8f2] p-8 text-center shadow-[0_8px_30px_rgba(46,41,35,0.06)] sm:p-14">
+            <span className="inline-block rounded-full border border-[#bfae95] bg-[#f5ede0] px-4 py-1 text-xs uppercase tracking-widest text-[#695a45]">
+              Скоро открытие галереи
+            </span>
+
+            <h2 className="mt-6 font-serif text-3xl text-[#29251f] sm:text-4xl lg:text-5xl leading-tight">
+              Мы готовим <em>живую фотохронику</em>
+              <br />наших ритуалов и пространства
+            </h2>
+
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#5c5345] sm:text-lg">
+              Каждая деталь в студии «Радость» подобрана для вашего глубокого расслабления: мягкий тёплый свет, природные материалы, умиротворяющая тишина и заботливые руки мастеров.
+            </p>
+
+            <div className="mt-10 grid gap-6 text-left sm:grid-cols-3">
+              <div className="rounded-2xl border border-[#e5dcd0] bg-[#f4ece1]/70 p-6">
+                <h3 className="font-serif text-2xl text-[#29251f]">Атмосфера</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#695d4d]">
+                  Камерное пространство без спешки и городской суеты, где можно восстановить силы.
+                </p>
               </div>
-              <span className="mt-5 block px-2 pb-3 font-serif text-3xl">{title}</span>
-            </button>
-            <figcaption className="mt-4 flex justify-between text-sm text-[#615442]"><span>Радость</span><span>Момент для себя</span></figcaption>
-          </figure>
-        ))}
+              <div className="rounded-2xl border border-[#e5dcd0] bg-[#f4ece1]/70 p-6">
+                <h3 className="font-serif text-2xl text-[#29251f]">Натуральность</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#695d4d]">
+                  Премиальные гипоаллергенные масла, прогретый хлопок и натуральные текстуры.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-[#e5dcd0] bg-[#f4ece1]/70 p-6">
+                <h3 className="font-serif text-2xl text-[#29251f]">Внимание</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#695d4d]">
+                  Индивидуальный подбор техники под состояние вашего тела и настроение.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
+              <Link
+                to="/services"
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#29251f] px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-[#433c32]"
+              >
+                Посмотреть услуги и прайс
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
-      <dialog ref={dialog} onClose={() => setSelected(null)} onClick={(event) => { if (event.target === dialog.current) dialog.current.close(); }} aria-label="Просмотр фотографии" className="fixed inset-0 m-auto max-h-[92vh] w-[min(94vw,1000px)] overflow-auto rounded-2xl bg-[#f4eee3] p-4 backdrop:bg-black/80 sm:p-7">
-        {selected !== null && <><div className="mb-4 flex items-center justify-between gap-4"><p className="font-serif text-3xl">{works[selected][1]}</p><button autoFocus onClick={() => dialog.current?.close()} className="grid size-11 shrink-0 place-items-center rounded-full border border-[#9a8c76] text-2xl focus-visible:outline-2 focus-visible:outline-offset-2" aria-label="Закрыть фотографию">×</button></div><EditorialImage key={selected} src={works[selected][0]} alt={works[selected][1]} className="max-h-[70vh] w-full object-contain" /></>}
-      </dialog>
+
       <section className="works-quote full-section">
         <p>«Мы не меняем вас. Мы помогаем телу вспомнить состояние, в котором ему хорошо».</p>
         <span>Команда студии «Радость»</span>

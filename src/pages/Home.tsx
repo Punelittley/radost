@@ -102,24 +102,6 @@ const benefits = [
   ],
 ];
 
-const gallery = [
-  {
-    src: "https://images.unsplash.com/photo-1600612253971-422e7f7faeb6?auto=format&fit=crop&w=1200&q=85",
-    alt: "Атмосфера массажной студии",
-    className: "gallery-main",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=85",
-    alt: "Массаж спины",
-    className: "",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=900&q=85",
-    alt: "Натуральное массажное масло",
-    className: "",
-  },
-];
-
 function Arrow() {
   return null;
 }
@@ -161,9 +143,9 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-foot">
-          <span>г. Вологда</span>
+          <span>Студия массажа «Радость»</span>
           <span className="hero-foot-line" />
-          <span>Ежедневно, 10:00–21:00</span>
+          <span>Скоро открытие</span>
         </div>
       </section>
 
@@ -249,28 +231,32 @@ export default function Home() {
 
       <section className="results section" id="results">
         <div className="results-head">
-          <h2>
-            То, что остаётся <em>после</em>
-          </h2>
+          <div>
+            <p className="eyebrow light">Состояние и чувства</p>
+            <h2>
+              То, что остаётся <em>после</em>
+            </h2>
+          </div>
           <p>Лёгкость в теле. Мягкий взгляд. Спокойное дыхание.</p>
         </div>
-        <div className="gallery">
-          {gallery.map((item, index) => (
-            <figure className={item.className} key={item.src}>
-              <img src={item.src} alt={item.alt} />
-              {index === 0 && (
-                <button className="play" aria-label="Смотреть видео об атмосфере студии">
-                  <span>▶</span>
-                </button>
-              )}
-              <figcaption>Радость</figcaption>
-            </figure>
-          ))}
+        <div className="results-cards">
+          <div className="result-card">
+            <h3>Глубокое расслабление</h3>
+            <p>Уходит накопленное напряжение в мышцах шеи, плеч и спины. Тело наполняется лёгкостью и свободой.</p>
+          </div>
+          <div className="result-card">
+            <h3>Внутренняя тишина</h3>
+            <p>Замедление ритма и мягкая атмосфера помогают отпустить тревожные мысли и восстановить душевный ресурс.</p>
+          </div>
+          <div className="result-card">
+            <h3>Забота и тепло</h3>
+            <p>Натуральные тёплые масла, бережные руки мастеров и внимание к каждой индивидуальной особенности.</p>
+          </div>
         </div>
         <p className="result-quote">
           «После сеанса я впервые за долгое время почувствовала, что никуда не тороплюсь. И это
           ощущение осталось со мной».
-          <span>— Анна, гость студии</span>
+          <span>— Гость студии «Радость»</span>
         </p>
       </section>
 
@@ -323,40 +309,18 @@ export default function Home() {
       <CareSections />
 
       <section className="contact section" id="contacts">
-        <div className="contact-intro">
+        <div className="contact-intro text-center mx-auto max-w-2xl">
           <p className="eyebrow light">Будем рады встрече</p>
           <h2>
-            Запишитесь на свою <em>паузу</em>
+            Студия массажа <em>«Радость»</em>
           </h2>
-          <p>Напишите нам — администратор поможет выбрать услугу, мастера и удобное время.</p>
-          <a className="button button-light" href="https://t.me/" target="_blank" rel="noreferrer">
-            Написать в Telegram
-          </a>
-        </div>
-        <div className="contact-details">
-          <div>
-            <span>Телефон</span>
-            <a href="tel:+79001234567">+7 (900) 123-45-67</a>
-          </div>
-          <div>
-            <span>Адрес</span>
-            <p>г. Вологда, ул. Мира, 14</p>
-          </div>
-          <div>
-            <span>Режим работы</span>
-            <p>Ежедневно, 10:00–21:00</p>
-          </div>
-          <div>
-            <span>Социальные сети</span>
-            <p>
-              <a href="https://vk.com/" target="_blank" rel="noreferrer">
-                ВКонтакте
-              </a>{" "}
-              /{" "}
-              <a href="https://t.me/" target="_blank" rel="noreferrer">
-                Telegram
-              </a>
-            </p>
+          <p>
+            Мы готовимся к открытию нашего камерного пространства. Скоро здесь появится точный адрес, телефон и возможность онлайн-записи на ритуалы.
+          </p>
+          <div className="mt-8">
+            <Link to="/services" className="button button-light">
+              Посмотреть прайс-лист
+            </Link>
           </div>
         </div>
         <footer>

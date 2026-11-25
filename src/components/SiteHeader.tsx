@@ -166,10 +166,7 @@ export default function SiteHeader({ overlay = false }: { overlay?: boolean }) {
             </Link>
 
             <div className="mt-4 flex flex-col gap-1 text-center text-xs text-white/60">
-              <span>г. Вологда, ул. Мира, 14 · Ежедневно 10:00–21:00</span>
-              <a href="tel:+79001234567" className="text-white/80 hover:text-white">
-                +7 (900) 123-45-67
-              </a>
+              <span>Студия массажа «Радость» · Скоро открытие</span>
             </div>
           </div>
         </div>
